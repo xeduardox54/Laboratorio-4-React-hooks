@@ -3,9 +3,7 @@ import React from 'react'
 const Statistics = (props) => { 
 
   return (
-    <div>
-        {props.text}: {props.value}
-    </div>
+    <div>{props.text}: {props.value}</div>
   )
 }
 
