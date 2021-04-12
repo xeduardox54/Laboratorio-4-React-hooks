@@ -1,5 +1,6 @@
 import './App.css';
 import Statistics from './components/statistics';
+import Buttons from './components/buttons';
 import React, {useState} from 'react';
 
 function App() {
@@ -18,9 +19,9 @@ function App() {
     <div>
       <h2>give feedback</h2>
       <br/>
-      <button onClick={() => setGood(good + 1)}>Good</button>
-      <button onClick={() => setNeutral(neutral + 1)}>Neutral</button>
-      <button onClick={() => setBad(bad + 1)}>Bad</button>
+      <Buttons value={good} setValue={setGood} name={"Good"}/>
+      <Buttons value={neutral} setValue={setNeutral} name={"Neutral"}/>
+      <Buttons value={bad} setValue={setBad} name={"Bad"}/>
       <br/>
       {showStatistics}
     </div>
