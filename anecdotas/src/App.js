@@ -17,15 +17,16 @@ const App = () => {
   const mostSelected = anecdotes[newArray.indexOf(Math.max(...newArray))]
 
   return (
-    <div> 
-      <div>
+    <div style={stylesContainer}> 
+      <h1 style={{textAlign:"Center"}}>Anecdotes</h1>
+      <div style={{backgroundColor:'yellow',padding:5}}>
         <h2>Anecdote of the day</h2>
         <h4>{selected.anecdote}</h4>
         <h3>Has {votes}</h3>
         <button onClick={()=>{selected.votes++;setVotes(selected.votes)}}>Vote</button>
         <button onClick={changeAnecdote} >Next Anecdote</button>
       </div>
-      <div>
+      <div style={{backgroundColor:'orange',padding:5}}>
         <h2>Anecdote with most votes</h2>
         <h4>{mostSelected.anecdote}</h4>
         <h3>Has {mostSelected.votes}</h3>
@@ -62,7 +63,9 @@ const anecdotes = [
 ]
 
 const stylesContainer = {
-  color: 'bliue',
+  backgroundColor: "green",
+  margin: 10,
+  padding: 20,
 }
 
 export default App;
