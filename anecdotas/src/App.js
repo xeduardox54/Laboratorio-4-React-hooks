@@ -9,13 +9,27 @@ const App = () => {
     setSelected(anecdote);
     setVotes(anecdote.votes);
   }
+  
+  var newArray = []
+  for(var cont=0;cont<=5;cont++) {
+    newArray.push(anecdotes[cont].votes)
+  };
+  const mostSelected = anecdotes[newArray.indexOf(Math.max(...newArray))]
 
   return (
     <div> 
-      <h4>{selected.anecdote}</h4>
-      <h3>Has {votes}</h3>
-      <button onClick={()=>{selected.votes++;setVotes(selected.votes)}}>Vote</button>
-      <button onClick={changeAnecdote} >Next Anecdote</button>
+      <div>
+        <h2>Anecdote of the day</h2>
+        <h4>{selected.anecdote}</h4>
+        <h3>Has {votes}</h3>
+        <button onClick={()=>{selected.votes++;setVotes(selected.votes)}}>Vote</button>
+        <button onClick={changeAnecdote} >Next Anecdote</button>
+      </div>
+      <div>
+        <h2>Anecdote with most votes</h2>
+        <h4>{mostSelected.anecdote}</h4>
+        <h3>Has {mostSelected.votes}</h3>
+      </div>
     </div>
   )
 }
@@ -46,5 +60,9 @@ const anecdotes = [
     votes: 0,
   },
 ]
+
+const stylesContainer = {
+  color: 'bliue',
+}
 
 export default App;
